@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestData\InvalidDocumentHeader.txt" />
+    <None Remove="TestData\InvalidDocumentItem.txt" />
+    <None Remove="TestData\ProperDocumentHeader.txt" />
+    <None Remove="TestData\ProperDocumentItem.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\InvalidDocumentHeader.txt" />
+    <EmbeddedResource Include="TestData\InvalidDocumentItem.txt" />
+    <EmbeddedResource Include="TestData\ProperDocumentHeader.txt" />
+    <EmbeddedResource Include="TestData\ProperDocumentItem.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentProcessingAPI\DocumentProcessingAPI.csproj" />
+  </ItemGroup>
+
+</Project>

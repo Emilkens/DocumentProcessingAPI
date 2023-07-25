@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "20347f46-5fdc-472f-85e4-fe05453568d8",
+		"name": "DocumentProcessingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication test - proper credentials - 400",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication test - wrong credentials - 401",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmgfgsV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication test - base64 decode exception - 500",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - no content-type - 400",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - empty body - 400",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - 53085222.PUR - 200, Processed properly",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "TestFiles/53085222.PUR"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - 53085223.PUR - 200, Processed properly",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "TestFiles/53085223.PUR"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - 10016182.PUR - 400, no header",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "TestFiles/10016182.PUR"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing test - 53095190.PUR - 400, no items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dnM6cmVrcnV0YWNqYQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "TestFiles/53095190.PUR"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:7200/api/test/?x=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"api",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
